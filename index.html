@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-Br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estacionamento IFSP-2024</title>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+</head>
+<body onload="valida()">
+    <header> 
+        <fieldset>
+            <div class="nav">
+                <label for="Tarifa">Tarifa</label>
+                <input type="number" id="tarifa" value="10" min="10" readonly> 
+                <button onclick="atualizarTarifa()"> &#128228;</button>   
+            </div>
+            <div class="nav">
+                <label for="Entrada">Data atual</label>
+                <input type="datetime-local" id="datatual" value="2024-10-18">    
+            </div>
+        </fieldset>   
+    </header>
+    <section>
+        <div class="container">
+            <form>
+                <fieldset>
+                    <legend><h2>Nova Entrada</h2></legend>
+                    <div class="label">
+                        <label for="entrada">Hora entrada</label>
+                        <input type="number" name="entrada" id="entrada" value="8" min='8'max='18'required>
+                    </div>
+
+                    <div class="label">
+                        <label for="placa">Placa</label>
+                        <input type="text" id="placa" value="XYZ 256" required>
+                    </div>
+                    
+                    <div class="label">
+                        <label for="modelo">Marca/cor</label>
+                        <input type="text" name="modelo"  value="Fiat branco">
+                    </div>
+
+                    <div class="botoes">
+                        <button type="submit" class="primario" id="btRegistrar">Registrar</button>
+                        <button type="reset" class="secundario">Cancelar</button>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </section>
+    <div class="container">
+        <table id="entradas">
+            <tr>
+                <th>Placa</th>
+                <th>Entrada</th>
+                <th>Saída</th>
+                <th>Tempo</th>
+                <th>Valor</th>
+            </tr>
+        </table>
+    </section>
+   
+    <script src="../js/entrada.js"> </script>
+</body>
+</html>
